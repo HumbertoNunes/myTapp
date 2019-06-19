@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
                 
-            <nav aria-label="Page navigation example">
+            <nav aria-label="Page navigation">
                 <ul class="pagination">
                     <li class="page-item"><a class="page-link" href="#">1</a></li>
                     <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -16,25 +16,26 @@
             <div class="card">
                 <div class="card-header">APIs</div>
 
-                <table class="table">
+                <table class="table table-hover">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>nome</th>
-                            <th>descrição</th>
+                            <th>Name</th>
+                            <th>First Brewed</th>
                         </tr>
                     </thead>
-                    <tbody id="tbody">
-                        <tr>
-                            <td>1</td>
-                            <td>Skarlof</td>
-                            <td>Cerveja do Brasil</td>
-                        </tr>
-                    </tbody>
+                    <tbody id="tbody"></tbody>
                 </table>
-
+                @include('layouts.component.modal')
             </div>
         </div>
     </div>
 </div>
+
+
+
 @endsection
+
+@push('scripts')
+    <script type="text/javascript" src="{{ asset('js/pagination.js') }}"></script>
+@endpush
