@@ -4,18 +4,35 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+                
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                </ul>
+            </nav>
+
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">APIs</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>nome</th>
+                            <th>descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <tr>
+                            <td>1</td>
+                            <td>Skarlof</td>
+                            <td>Cerveja do Brasil</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                    You are logged in!
-                </div>
             </div>
         </div>
     </div>
