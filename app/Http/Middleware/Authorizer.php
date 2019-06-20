@@ -9,7 +9,7 @@ class Authorizer
 
     public function handle($request, Closure $next)
     {
-    	if(!$request->is('login') && \Auth::guest()) {
+    	if( (!\Request::path('login') || !\Request::path('register')) && \Auth::guest()) {
             return redirect('/login');
         }
 
