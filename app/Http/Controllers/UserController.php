@@ -29,8 +29,10 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
-    	if($user->id === \Auth::user()->id)
+    	if($user->id === \Auth::user()->id) {
          	$user->delete();
+         	session()->flash('message', 'Usuário removido.');
+    	}
 
 
         return redirect('/login');
