@@ -5,6 +5,8 @@ $( document ).ready(function() {
 	setEvents();
 
 	setEntries();
+
+	$('.item-page-number').first().addClass('active');
 });
 
 
