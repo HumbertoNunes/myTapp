@@ -14,3 +14,13 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/home', function(){
+	return redirect('/');
+});
+
+Route::get('/users/{user}/edit', 'UserController@edit');
+
+Route::patch('/users/{user}', 'UserController@update');
+
+Route::delete('/users/{user}', 'UserController@destroy');
