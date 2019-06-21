@@ -1,0 +1,22 @@
+.alert {
+	position: absolute;
+	bottom: 2em;
+	right: 2em;
+	opacity: 0;
+	z-index: 1;
+	animation: slideoff 3.5s;
+}
+
+@keyframes slideoff {    
+    0% {
+    	bottom: 6em;
+        opacity: 1;
+    }
+    50% {
+    	bottom: 2em;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
