@@ -3,6 +3,7 @@
 namespace MyTapp\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Auth\User;
 
 class UserController extends Controller
@@ -18,6 +19,26 @@ class UserController extends Controller
 
 	public function update(User $user, Request $request)
 	{
+		 $validatedData = $request->validate([
+	     	'name' => [
+	     		'required',
+	     		'string',
+	     		'max:255',
+	     		 Rule::unique('users')->ignore($user->id)
+	     		],
+
+	     	'email' => [
+	     		'required',
+	     		'string',
+	     		'email',
+	     		'max:255',
+	     		Rule::unique('users')->ignore($user->id)
+	     	],
+
+	     	'password' => 'min:8'
+
+	     ]);
+
 		$user->name = $request->name;
 		$user->email = $request->email;
 		$user->password = bcrypt($request->password);
