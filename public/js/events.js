@@ -1,3 +1,13 @@
+$(document).ready(function(){
+
+	setEvents();
+
+	lock();
+
+	$('.item-page-number').first().addClass('active');
+
+});
+
 function setEvents()
 {
 
@@ -56,4 +66,25 @@ function toggleButton(button)
 	var entries = $('.show-entries').val();
 
 	return { number: number, entries: entries };
+}
+
+function lock()
+{
+	$('#unlock').toggle();
+
+	$('.lock').click(function(){
+
+		$('.lock').toggle();
+		
+		$('#password').prop('disabled',function(prop, boolean) {
+			
+			if(boolean)
+				$('#password').attr('placeholder','Desabilite no cadeado...');
+			else
+				$('#password').attr('placeholder','Habilite no cadeado...');
+
+			return !boolean;
+		});
+
+	});
 }

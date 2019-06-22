@@ -52,7 +52,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Nova senha') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" disabled placeholder='Habilite no cadeado...'>
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -60,6 +60,12 @@
                                     </span>
                                 @enderror
                             </div>
+
+                            <div class="col-md-1">
+                                <i id="lock" class="lock" data-feather="lock"></i>
+                                <i id="unlock" class="lock" data-feather="unlock"></i>
+                            </div>
+
                         </div>
 
                         <div class="form-group row mb-0">
@@ -76,3 +82,7 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+    <script type="text/javascript" src="{{ asset('js/events.js') }}"></script>
+@endpush

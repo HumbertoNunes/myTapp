@@ -2,11 +2,8 @@ $( document ).ready(function() {
 	
 	pagination();
 	
-	setEvents();
-
 	setEntries();
 
-	$('.item-page-number').first().addClass('active');
 });
 
 
